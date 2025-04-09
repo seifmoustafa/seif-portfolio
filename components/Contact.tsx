@@ -64,7 +64,7 @@ export default function Contact() {
         </div>
 
         <a
-          href="mailto:youremail@example.com"
+          href="mailto:seif.moustafa516@gmail.com"
           className="inline-flex items-center gap-2 text-primary hover:underline"
         >
           <FiMail /> seif.moustafa516@gmail.com

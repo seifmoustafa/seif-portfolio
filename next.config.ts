@@ -1,7 +1,16 @@
-import type { NextConfig } from "next";
+// next.config.js
+/** @type {import('next').NextConfig} */
+const isGithubPages = process.env.DEPLOY_ENV === "GH_PAGES";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true, // required for static export if using next/image
+  },
+  basePath: isGithubPages ? "/seif-portfolio" : "",
+  assetPrefix: isGithubPages
+    ? "https://github.com/seifmoustafa/seif-portfolio"
+    : "",
 };
 
-export default nextConfig;
+module.exports = nextConfig;
