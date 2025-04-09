@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Seif Moustafa | Portfolio",
-  description: "Full-stack dev: Flutter · React · .NET Core",
+  description: "Full-stack Developer – Flutter, React, and .NET Core",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-background text-gray-200 dark:bg-[#0f172a]`}
+        className={`${inter.className} bg-background text-text dark:bg-background-dark transition-colors`}
       >
         {children}
       </body>

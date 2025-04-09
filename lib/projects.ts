@@ -14,24 +14,24 @@ export const projects: Project[] = [
   },
   {
     title: "ReadIt - Book Library",
-    desc: "Discover books from the Google Books API.",
+    desc: "Discover books via the Google Books API.",
     github: "https://github.com/seifmoustafa/read_it",
   },
   {
     title: "Galvanic Cell",
-    desc: "Calculate galvanic cell experiments with nice UI.",
+    desc: "Interactive tool to calculate galvanic cell experiments.",
     github: "https://github.com/seifmoustafa/galvanic-cell",
     link: "https://seifmoustafa.github.io/galvanic-cell/",
   },
   {
     title: "Attendance Dashboard",
-    desc: "Upload & analyze attendance with charts & tables.",
+    desc: "Responsive web app to manage and analyze attendance data.",
     github: "https://github.com/seifmoustafa/Attendance",
     link: "https://seifmoustafa.github.io/Attendance/",
   },
   {
     title: "Deals (Under Development)",
-    desc: "E-commerce app for coupons & cashbacks like Waffarha.",
+    desc: "E-commerce platform for coupons & cashbacks (like Waffarha).",
     github: "https://github.com/seifmoustafa/Deals",
   },
 ];
