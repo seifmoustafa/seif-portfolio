@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Seif Moustafa | Portfolio",
-  description: "Full-stack Developer – Flutter, React, and .NET Core",
+  title: "AppVanguard | Team Portfolio",
+  description: "Innovative Software Solutions by AppVanguard",
 };
 
 export default function RootLayout({
@@ -15,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={`${inter.className} bg-background text-text dark:bg-background-dark transition-colors`}
+        className={`${inter.className} bg-gradient-to-br from-background-gradientStart to-background-gradientEnd text-text`}
       >
         {children}
       </body>

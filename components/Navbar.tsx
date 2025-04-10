@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
+import { FiMenu, FiX, FiMoon, FiSun, FiFileText } from "react-icons/fi";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,19 +19,19 @@ export default function Navbar() {
   const links = [
     { label: "Home", section: "hero" },
     { label: "About", section: "about" },
-    { label: "Skills", section: "experience" },
+    { label: "Expertise", section: "experience" },
     { label: "Projects", section: "projects" },
     { label: "Contact", section: "contact" },
   ];
 
   return (
-    <nav className="fixed w-full backdrop-blur bg-[#0f172a]/70 dark:bg-[#0f172a]/70 shadow z-50">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/50 shadow transition-colors">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <span
-          className="text-xl font-bold text-primary cursor-pointer"
+          className="text-xl font-bold text-primary cursor-pointer hover:text-accent transition-colors"
           onClick={() => handleScroll("hero")}
         >
-          Seif Moustafa
+          AppVanguard
         </span>
 
         <ul className="hidden md:flex space-x-6 font-medium">
@@ -39,7 +39,7 @@ export default function Navbar() {
             <li key={section}>
               <button
                 onClick={() => handleScroll(section)}
-                className="hover:text-primary transition-colors cursor-pointer"
+                className="hover:text-accent transition-colors cursor-pointer"
               >
                 {label}
               </button>
@@ -48,32 +48,38 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-4">
-          <button
-            onClick={() => setDark((d) => !d)}
-            aria-label="Toggle Theme"
-            className="p-1 rounded hover:bg-gray-200 dark:hover:bg-navy transition-colors text-gray-400 dark:text-gray-300"
+          <a
+            href="/Team_CV.docx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+            title="View Team CV"
           >
-            {dark ? <FiSun /> : <FiMoon />}
-          </button>
-
+            <FiFileText size={20} className="text-primary" />
+          </a>
           <button
-            className="md:hidden p-1 hover:cursor-pointer text-gray-400 dark:text-gray-300"
-            onClick={() => setOpen((o) => !o)}
+            onClick={() => setDark(!dark)}
+            className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+            aria-label="Toggle Theme"
+          >
+            {dark ? <FiSun size={20} /> : <FiMoon size={20} />}
+          </button>
+          <button
+            className="md:hidden p-2 text-gray-200 hover:cursor-pointer"
+            onClick={() => setOpen((prev) => !prev)}
           >
             {open ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
       {open && (
-        <ul className="md:hidden bg-navy px-4 pb-4 space-y-2">
+        <ul className="md:hidden bg-black/50 px-4 pb-4 space-y-2">
           {links.map(({ label, section }) => (
             <li key={section}>
               <button
                 onClick={() => handleScroll(section)}
-                className="block w-full text-left py-2 border-b border-gray-700
-                           hover:bg-[#1e293b] transition-colors cursor-pointer"
+                className="block w-full text-left py-2 border-b border-gray-600 hover:bg-gray-700 transition-colors cursor-pointer"
               >
                 {label}
               </button>

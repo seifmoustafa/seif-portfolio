@@ -13,23 +13,23 @@ const socials: Social[] = [
   {
     icon: <FiLinkedin />,
     label: "LinkedIn",
-    url: "https://www.linkedin.com/in/seif-moustafa-60115f/",
+    url: "https://www.linkedin.com/in/appvanguard/",
   },
   {
     icon: <FiGithub />,
     label: "GitHub",
-    url: "https://github.com/seifmoustafa/seifmoustafa",
+    url: "https://github.com/appvanguard",
   },
   {
     icon: <FiCoffee />,
-    label: "Buy Me a Coffee",
-    url: "https://buymeacoffee.com/seifmoustafa",
+    label: "Buy Us a Coffee",
+    url: "https://buymeacoffee.com/appvanguard",
   },
 ];
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-gray-50 dark:bg-[#1e293b]">
+    <section id="contact" className="py-24 bg-transparent transition-colors">
       <motion.div
         className="max-w-4xl mx-auto px-4 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -37,37 +37,31 @@ export default function Contact() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-gray-800 dark:text-gray-100">
-          Contact
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">
+          Contact Us
         </h2>
-        <p className="mb-12 text-gray-700 dark:text-gray-300 leading-7">
-          Have a project in mind, a question, or just want to say hi?
-          <br className="hidden md:block" />
-          Let’s connect and build something amazing together!
+        <p className="mb-12 text-gray-200 leading-relaxed">
+          Have a project idea or want to collaborate? Get in touch with us!
         </p>
-
         <div className="flex flex-wrap justify-center gap-6 mb-10">
           {socials.map(({ icon, label, url }) => (
             <a
               key={label}
               href={url}
               target="_blank"
-              rel="noreferrer"
-              className="w-40 bg-white dark:bg-[#0f172a] p-4 rounded-lg shadow
-                         hover:shadow-lg flex flex-col items-center
-                         transition-colors"
+              rel="noopener noreferrer"
+              className="w-40 bg-black/40 p-4 rounded-lg shadow hover:shadow-2xl transition-colors"
             >
               {icon}
-              <span className="mt-2 text-sm">{label}</span>
+              <span className="mt-2 block text-sm text-gray-300">{label}</span>
             </a>
           ))}
         </div>
-
         <a
-          href="mailto:seif.moustafa516@gmail.com"
-          className="inline-flex items-center gap-2 text-primary hover:underline"
+          href="mailto:appvanguard@gmail.com"
+          className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"
         >
-          <FiMail /> seif.moustafa516@gmail.com
+          <FiMail size={20} /> appvanguard@gmail.com
         </a>
       </motion.div>
     </section>

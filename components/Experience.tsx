@@ -3,41 +3,40 @@ import { motion } from "framer-motion";
 
 const skills = [
   {
-    title: "Flutter",
-    years: "2 yrs",
-    text: "Cross-platform mobile apps with Dart",
+    title: "Mobile Development",
+    years: "Expertise",
+    text: "Building cross-platform mobile apps with Flutter.",
   },
   {
-    title: "React.js",
-    years: "1 yr",
-    text: "Dynamic, responsive SPAs",
+    title: "Web Development",
+    years: "Expertise",
+    text: "Crafting responsive and dynamic web applications with React.",
   },
   {
-    title: ".NET Core",
-    years: "1 yr",
-    text: "Secure, scalable RESTful backends",
+    title: "Backend Engineering",
+    years: "Expertise",
+    text: "Designing secure and scalable RESTful APIs with .NET Core.",
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-gray-50 dark:bg-[#1e293b]">
+    <section id="experience" className="py-24 bg-transparent transition-colors">
       <div className="max-w-6xl mx-auto px-4">
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-800 dark:text-gray-100"
+          className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Skills
+          Our Expertise
         </motion.h2>
-
         <div className="grid md:grid-cols-3 gap-6">
           {skills.map((s, i) => (
             <motion.div
               key={s.title}
-              className="p-6 bg-white dark:bg-[#0f172a] rounded-xl shadow-lg hover:shadow-xl transition flex flex-col"
+              className="rounded-xl bg-black/40 p-6 shadow-lg hover:shadow-2xl transition transform hover:scale-105"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -46,10 +45,8 @@ export default function Experience() {
               <h3 className="text-xl font-semibold text-primary mb-1">
                 {s.title}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                {s.years}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mt-2">{s.text}</p>
+              <p className="text-sm text-gray-300">{s.years}</p>
+              <p className="mt-2 text-gray-200">{s.text}</p>
             </motion.div>
           ))}
         </div>
